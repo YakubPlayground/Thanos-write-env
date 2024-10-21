@@ -1,14 +1,21 @@
 ```mermaid
 graph TD
     B[1 - Prometheus] -->|Visualization| C[2 - Grafana] --> |Storage| A[3 - Thanos]
-    subgraph 0 - Minikube Cluster
-        A
-        B
-        C
+    
+    subgraph 0 - Codespaces
         E
-    end
+        E
+        subgraph 1 - Minikube Cluster
+            A
+            B
+            C
+            E
+        end
+    end 
+    F[Devops Workstation]
     D[Bitnami Repo] --> |Local Service| E[Helm Charts]
 ```
+
 
 ```markdown
 ## Minikube IP Address
